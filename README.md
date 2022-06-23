@@ -37,6 +37,26 @@ cd client
 npm run build
 ```
 
+### To summarize the changes to the course code
+
+Instead of a `<Switch />` we now use a [ `<Routes />` ](https://reactrouter.com/docs/en/v6/api#routes-and-route) component.
+
+The [ `<Route />` ] component  receives an **_element_** prop which should be a React element i.e. JSX. Routing is
+also now relative to the component.
+
+For redirection and Private routing we can use we a [ `<Navigate />` ] component.
+
+
+The styling also affected the [ `<Alert />`
+](client/src/components/layout/Alert.js) component as this will show in
+addition to other page components adding it's own `<section>` would mean extra
+content shift when the alerts show. To solve this the alerts have been given
+their so they are `position: fixed;` and we get no content shift,
+which additionally makes for a smoother UI with the alerts popping up in the top
+right of the screen.
+
+---
+
 ### Test production before deploy
 
 After running a build in the client 👆, cd into the root of the project.  
